@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{41C0B8A8-7BAB-1019-E53B-F0FFDF0BA13F}</ProjectGuid>
+	<ProjectGuid>{328D8258-D7E0-2404-7AD6-18386CF65AED}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -48,11 +48,16 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\ChangeMesh.cs" />
      <Compile Include="Assets\Scripts\Collectible.cs" />
-     <Compile Include="Assets\Scripts\DBB\DirectionFinder.cs" />
      <Compile Include="Assets\Scripts\Destroy.cs" />
      <Compile Include="Assets\Scripts\GUIHandler.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Patrol.cs" />
+     <Compile Include="Assets\Scripts\Reza&apos;s Scipts\BallMovement.cs" />
+     <Compile Include="Assets\Scripts\Reza&apos;s Scipts\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\Reza&apos;s Scipts\ElectricWall.cs" />
+     <Compile Include="Assets\Scripts\Reza&apos;s Scipts\LaserWall.cs" />
+     <Compile Include="Assets\Scripts\Reza&apos;s Scipts\LightControl.cs" />
+     <Compile Include="Assets\Scripts\Reza&apos;s Scipts\TextureChanger.cs" />
      <Compile Include="Assets\Scripts\flipTexture.cs" />
      <Compile Include="Assets\Scripts\followCam.cs" />
      <Compile Include="Assets\Scripts\hover.cs" />
