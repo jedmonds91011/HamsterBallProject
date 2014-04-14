@@ -5,15 +5,8 @@ public class playerMovement : MonoBehaviour {
 
 	public float moveSpeed;
 	public float maxSpeed; 
-	public GameObject killAnimation;
 
 	private Vector3 input;
-	private Vector3 spawn;
-	// Use this for initialization
-	void Start () 
-	{
-		spawn = transform.position;
-	}
 	
 	// Update is called once per frame
 	void Update () 
@@ -23,21 +16,9 @@ public class playerMovement : MonoBehaviour {
 		{
 			rigidbody.AddForce (input * moveSpeed);
 		}
-
-		if (transform.position.y < -2) 
-		{
-			Die();
-		}
+		
 	}
 
-	void OnCollisionEnter(Collision other)
-	{
-		if (other.gameObject.tag == "Enemy")
-		{
-			Die();
-		}
-
-	}
 	void OnTriggerEnter(Collider other)
 	{
 		if(other.transform.tag == "Goal")
@@ -49,13 +30,5 @@ public class playerMovement : MonoBehaviour {
 		{
 			Destroy(other.gameObject);
 		}
-
-	}
-
-
-	void Die()
-	{
-		Instantiate(killAnimation, transform.position, Quaternion.identity);
-		transform.position = spawn;
 	}
 }
