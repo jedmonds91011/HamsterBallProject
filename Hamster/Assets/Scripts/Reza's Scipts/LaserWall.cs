@@ -5,12 +5,14 @@ public class LaserWall : MonoBehaviour {
 
 	public GameObject character;
 	public Texture armorTex;
-	public Texture nonArmor;
+	private Texture nonArmorTex;
+	private Shader nonArmorShade;
 
 	// Use this for initialization
 	void Start () 
 	{
-		nonArmor = character.renderer.material.mainTexture;
+		nonArmorTex = character.renderer.material.mainTexture;
+		nonArmorShade = character.renderer.material.shader;
 	}
 	
 	// Update is called once per frame
@@ -29,7 +31,8 @@ public class LaserWall : MonoBehaviour {
 
 	void OnTriggerExit(Collider collider)
 	{
-		character.renderer.material.mainTexture = nonArmor;
+		character.renderer.material.mainTexture = nonArmorTex;
+		character.renderer.material.shader = nonArmorShade;
 	}
 
 }
