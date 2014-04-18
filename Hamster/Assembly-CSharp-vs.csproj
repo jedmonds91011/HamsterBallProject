@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\Patrol.cs" />
      <Compile Include="Assets\Scripts\Reza&apos;s Scipts\BallMovement.cs" />
      <Compile Include="Assets\Scripts\Reza&apos;s Scipts\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\Reza&apos;s Scipts\ElectricBounce.cs" />
      <Compile Include="Assets\Scripts\Reza&apos;s Scipts\ElectricWall.cs" />
      <Compile Include="Assets\Scripts\Reza&apos;s Scipts\LaserWall.cs" />
      <Compile Include="Assets\Scripts\Reza&apos;s Scipts\LightControl.cs" />

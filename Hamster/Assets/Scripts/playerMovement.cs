@@ -16,6 +16,8 @@ public class playerMovement : MonoBehaviour {
 		{
 			rigidbody.AddForce (input * moveSpeed);
 		}
+
+		//Debug.Log(rigidbody.velocity);
 		
 	}
 

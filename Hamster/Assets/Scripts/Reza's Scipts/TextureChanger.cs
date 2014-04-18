@@ -8,6 +8,8 @@ public class TextureChanger : MonoBehaviour {
 	private Texture oldTexture;
 	private Shader newShader;
 	private Shader oldShader;
+	//private bool recentlyChanged = false;
+	private float timer;
 
 	//On start, the texture/shader assigned to the public texture slot in editor
 	//is stored as the material/shader of the item this script is attached to
@@ -19,6 +21,11 @@ public class TextureChanger : MonoBehaviour {
 		oldShader = Shader.Find ("Transparent/Diffuse");
 	}
 
+	void Update()
+	{
+		timer += Time.deltaTime;
+	}
+
 	// When the target (assigned in editor) object enters the trigger
 	//their material/shader is changed to the material/shader that was
 	//placed in the public slot within the editor.
@@ -26,20 +33,22 @@ public class TextureChanger : MonoBehaviour {
 	//This allows the object to switch materials multiple times. 
 	void OnTriggerEnter (Collider collider) 
 	{
-		oldTexture = character.renderer.material.mainTexture;
-		oldShader = character.renderer.material.shader;
+		if (timer >= 0.5)
+			{
+			oldTexture = character.renderer.material.mainTexture;
+			oldShader = character.renderer.material.shader;
 
-		gameObject.renderer.material.mainTexture = oldTexture;
-		gameObject.renderer.material.shader = oldShader;
+			gameObject.renderer.material.mainTexture = oldTexture;
+			gameObject.renderer.material.shader = oldShader;
 
-		character.renderer.material.mainTexture = newTexture;
-		character.renderer.material.shader = newShader;
+			character.renderer.material.mainTexture = newTexture;
+			character.renderer.material.shader = newShader;
 
-		newTexture = oldTexture;
-		newShader = oldShader;
-
-
-
+			newTexture = oldTexture;
+			newShader = oldShader;
+			//recentlyChanged = true;
+			timer = 0;
+			} 
 	}
 
 }
