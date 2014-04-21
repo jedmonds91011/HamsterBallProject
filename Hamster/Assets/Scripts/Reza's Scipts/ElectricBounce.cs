@@ -6,6 +6,9 @@ public class ElectricBounce : MonoBehaviour {
 	public GameObject character;
 	public GameObject apllyForcetoThis;
 	public Texture rubberTex;
+	private float xForce;
+	private float zForce;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -14,6 +17,8 @@ public class ElectricBounce : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+		xForce = character.rigidbody.velocity.x;
+		zForce = character.rigidbody.velocity.z;
 	}
 
 	void OnTriggerEnter(Collider collision)
@@ -22,39 +27,50 @@ public class ElectricBounce : MonoBehaviour {
 		Debug.Log("OPP FORCE: " + oppositeForce);
 		Debug.Log("CURR Force: " + character.rigidbody.velocity);
 		*/
-		float xForce = 0;
-		float yForce = 0;
-		float zForce = 0;
 
+		/*
 		if (character.rigidbody.velocity.x > 0)
 			{
-			xForce = Random.Range(-20f, -30f);
+			//xForce = Random.Range(-20f, -30f);
+			//xForce = Random.Range(-20f, -10f);
+				xForce = -20f;
 			}
 		else if (character.rigidbody.velocity.x < 0)
 			{
-			xForce = Random.Range(20f, -0f);
+			//xForce = Random.Range(10f, 20f);
+			//xForce = Random.Range(20f, -0f);
+				xForce = 20f;
 			}
 
-		yForce = .25f;
+		yForce = .0f;
 			
 		if (character.rigidbody.velocity.z > 0)
 			{
-			zForce = Random.Range(-20f, -30f);
+			//zForce = Random.Range(-20f, -10f);
+			//zForce = Random.Range(-20f, -30f);
+			zForce = -10f;
 			}
 		else if (character.rigidbody.velocity.z < 0)
 			{
-			zForce = Random.Range(20f, 30f);
+			//zForce = Random.Range(10f, 20f);
+			//zForce = Random.Range(20f, 30f);
+			zForce = 10f;
+
 			}
+			*/
 
-		Vector3 oppositeForce = new Vector3(xForce, yForce, zForce); 
+		xForce *= -1;
+		zForce *= -1;
 
-		Debug.Log("OPP FORCE: " + oppositeForce);
-		Debug.Log("CURR Force: " + character.rigidbody.velocity);
+		Vector3 oppositeForce = new Vector3(xForce, 0.0f, zForce); 
+
+		//Debug.Log("OPP FORCE: " + oppositeForce);
+		//Debug.Log("CURR Force: " + character.rigidbody.velocity);
 
 
 		if (character.renderer.material.mainTexture != rubberTex)
 			{
-			apllyForcetoThis.rigidbody.AddForce(oppositeForce, ForceMode.Impulse);
+				apllyForcetoThis.rigidbody.AddForce(oppositeForce, ForceMode.Impulse);
 			}
 	}
 }

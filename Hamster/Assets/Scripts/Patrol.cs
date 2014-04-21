@@ -4,14 +4,14 @@ using System.Collections;
 public class Patrol : MonoBehaviour {
 	public Transform[] patrolPoints;
 	public float moveSpeed; 
-	public int totalPoints;
-	private float currentRotation;
+	//public int totalPoints;
+	//private float currentRotation;
 
 	private int currentPoint;
 	// Use this for initialization
 	void Start () {
 		transform.position = patrolPoints [0].position;
-		currentRotation = gameObject.transform.rotation.y;
+		//currentRotation = gameObject.transform.rotation.y;
 		currentPoint = 0;
 	
 	}
@@ -22,7 +22,7 @@ public class Patrol : MonoBehaviour {
 		if(transform.position == patrolPoints[currentPoint].position)
 		{
 			currentPoint++;
-			currentPoint %= totalPoints;
+			currentPoint %= patrolPoints.Length;
 
 		}
 		transform.position = Vector3.MoveTowards (transform.position, patrolPoints [currentPoint].position, moveSpeed * Time.deltaTime );
