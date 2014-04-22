@@ -8,20 +8,26 @@ public class ElectricBounce : MonoBehaviour {
 	public Texture rubberTex;
 	private float xForce;
 	private float zForce;
+	private bool hasHit;
+
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
+		xForce = 1.0f;
+		zForce = 1.0f;
+		hasHit = false;
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
-		xForce = character.rigidbody.velocity.x;
-		zForce = character.rigidbody.velocity.z;
+		//xForce = character.rigidbody.velocity.x;
+		//zForce = character.rigidbody.velocity.z;
 	}
 
-	void OnTriggerEnter(Collider collision)
+	void OnCollisionEnter(Collision collisionInfo )
 	{
 		/*Vector3 oppositeForce = new Vector3 (character.rigidbody.velocity.x * -5, character.rigidbody.velocity.y, character.rigidbody.velocity.z * -5);
 		Debug.Log("OPP FORCE: " + oppositeForce);
@@ -57,20 +63,31 @@ public class ElectricBounce : MonoBehaviour {
 			zForce = 10f;
 
 			}
-			*/
 
-		xForce *= -1;
-		zForce *= -1;
+		if (character.rigidbody.velocity.x > 0 && hasHit == false)
+			xForce *= -1;
 
-		Vector3 oppositeForce = new Vector3(xForce, 0.0f, zForce); 
+		if (character.rigidbody.velocity.z > 0 && hasHit == false)
+			zForce *= -1;
+		*/
+		Collider[] colliders = Physics.OverlapSphere (transform.position, 1.0f);
+
+		//Vector3 oppositeForce = new Vector3(xForce, 0.0f, zForce); 
 
 		//Debug.Log("OPP FORCE: " + oppositeForce);
 		//Debug.Log("CURR Force: " + character.rigidbody.velocity);
-
-
-		if (character.renderer.material.mainTexture != rubberTex)
+		foreach(Collider hit in colliders)
+		{
+			if(hit && hit.rigidbody)
 			{
-				apllyForcetoThis.rigidbody.AddForce(oppositeForce, ForceMode.Impulse);
+				hit.rigidbody.AddExplosionForce (10.0f, hit.transform.position, 2.0f);
 			}
+		
+		//if (character.renderer.material.mainTexture != rubberTex)
+			//{
+				//character.rigidbody.AddExplosionForce (10.0f, oppositeForce, 2.0f);
+				//apllyForcetoThis.rigidbody.AddForce(oppositeForce, ForceMode.VelocityChange);
+			//}
+		}
 	}
 }
