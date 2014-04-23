@@ -4,19 +4,19 @@ using System.Collections;
 public class ElectricBounce : MonoBehaviour {
 
 	public GameObject character;
-	public GameObject apllyForcetoThis;
+	//public GameObject apllyForcetoThis;
 	public Texture rubberTex;
-	private float xForce;
-	private float zForce;
-	private bool hasHit;
+	//private float xForce;
+	//private float zForce;
+	//private bool hasHit
 
 
 	// Use this for initialization
 	void Start () 
 	{
-		xForce = 1.0f;
-		zForce = 1.0f;
-		hasHit = false;
+		//xForce = 1.0f;
+		//zForce = 1.0f;
+		//hasHit = false;
 	
 	}
 	
@@ -70,19 +70,28 @@ public class ElectricBounce : MonoBehaviour {
 		if (character.rigidbody.velocity.z > 0 && hasHit == false)
 			zForce *= -1;
 		*/
-		Collider[] colliders = Physics.OverlapSphere (transform.position, 1.0f);
+
 
 		//Vector3 oppositeForce = new Vector3(xForce, 0.0f, zForce); 
 
 		//Debug.Log("OPP FORCE: " + oppositeForce);
 		//Debug.Log("CURR Force: " + character.rigidbody.velocity);
-		foreach(Collider hit in colliders)
-		{
-			if(hit && hit.rigidbody)
-			{
-				hit.rigidbody.AddExplosionForce (10.0f, hit.transform.position, 2.0f);
-			}
+
+
+		//if (character.rigidbody.velocity.x < 0)
+		//	character.rigidbody.AddForceAtPosition(Vector3.right * 20, character.transform.position);
+		/*
+		if (character.rigidbody.velocity.x > 0)
+			character.rigidbody.velocity = Vector3.left * 20;
+
+		if (character.rigidbody.velocity.z < 0)
+			character.rigidbody.velocity = Vector3.back * 20;
 		
+		if (character.rigidbody.velocity.z > 0)
+			character.rigidbody.velocity = Vector3.forward * 20;
+		*/	
+
+
 		//if (character.renderer.material.mainTexture != rubberTex)
 			//{
 				//character.rigidbody.AddExplosionForce (10.0f, oppositeForce, 2.0f);
@@ -90,4 +99,3 @@ public class ElectricBounce : MonoBehaviour {
 			//}
 		}
 	}
-}
