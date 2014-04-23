@@ -6,12 +6,14 @@ public class MagnetWall : MonoBehaviour {
 	public GameObject character;
 	public Texture cannotPass;
 
-	void OnTriggerEnter(Collider collider)
+	void OnCollideEnter(Collider collider)
 	{
-		if( character.renderer.material.mainTexture == cannotPass )
-		{
-			collider.isTrigger = true;
-		}
+		if (character.renderer.material.mainTexture != cannotPass) {
+						collider.isTrigger = true;
+				} 
+		else
+			collider.isTrigger = false;
+
 
 	}
 }
