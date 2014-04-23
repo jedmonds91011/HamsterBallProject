@@ -1,9 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Reza's Scipts\LaserWall.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Reza's Scipts\MagnetWall.cs">
     <Files>
-      <File FileName="Assets\Scripts\Reza's Scipts\LaserWall.cs" Line="37" Column="4" />
-      <File FileName="Assets\Scripts\Reza's Scipts\ElectricBounce.cs" Line="82" Column="31" />
+      <File FileName="Assets\Scripts\Reza's Scipts\MagnetWall.cs" Line="18" Column="1" />
+      <File FileName="Assets\Scripts\scrollTexture.cs" Line="22" Column="1" />
+      <File FileName="Assets\Scripts\Reza's Scipts\LaserWall.cs" Line="40" Column="1" />
+      <File FileName="Assets\Scripts\Reza's Scipts\ElectricBounce.cs" Line="102" Column="1" />
+      <File FileName="Assets\Scripts\Reza's Scipts\MagnetWall.cs" Line="13" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

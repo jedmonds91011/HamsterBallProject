@@ -14,7 +14,7 @@ public class scrollTexture : MonoBehaviour {
 			direction *= -1;
 
 		float offset = Time.time * scaleX * direction;
-		renderer.material.mainTextureOffset = new Vector2 (-offset, offset);
+		renderer.material.mainTextureOffset = new Vector2 (offset, 0.0f);
 	
 		count += 1;
 	}
