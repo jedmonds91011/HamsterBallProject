@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\Destroy.cs" />
      <Compile Include="Assets\Scripts\GUIHandler.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\HelpGUI.cs" />
      <Compile Include="Assets\Scripts\Kill.cs" />
      <Compile Include="Assets\Scripts\Magnetism.cs" />
      <Compile Include="Assets\Scripts\Patrol.cs" />
@@ -66,6 +67,7 @@
      <Compile Include="Assets\Scripts\Reza&apos;s Scipts\MagneticWallFUCKINGSUCKS.cs" />
      <Compile Include="Assets\Scripts\Reza&apos;s Scipts\TextureChanger.cs" />
      <Compile Include="Assets\Scripts\Rotator.cs" />
+     <Compile Include="Assets\Scripts\TitleGUI.cs" />
      <Compile Include="Assets\Scripts\flipTexture.cs" />
      <Compile Include="Assets\Scripts\followCam.cs" />
      <Compile Include="Assets\Scripts\hover.cs" />

@@ -9,6 +9,13 @@ public class GameManager : MonoBehaviour {
 	public static int currentLevel = 0;
 	public static int unlockedLevel;
 
+	void Update()
+	{
+		if(Input.GetKey(KeyCode.Escape))
+		{
+			Application.Quit();
+		}
+	}
 	public static void CompleteLevel()
 	{
 		currentLevel += 1;
