@@ -61,8 +61,9 @@
      <Compile Include="Assets\Scripts\Reza&apos;s Scipts\ElectricWall.cs" />
      <Compile Include="Assets\Scripts\Reza&apos;s Scipts\LaserWall.cs" />
      <Compile Include="Assets\Scripts\Reza&apos;s Scipts\LightControl.cs" />
+     <Compile Include="Assets\Scripts\Reza&apos;s Scipts\MagWall.cs" />
      <Compile Include="Assets\Scripts\Reza&apos;s Scipts\MagnetWall.cs" />
-     <Compile Include="Assets\Scripts\Reza&apos;s Scipts\MagneticWall.cs" />
+     <Compile Include="Assets\Scripts\Reza&apos;s Scipts\MagneticWallFUCKINGSUCKS.cs" />
      <Compile Include="Assets\Scripts\Reza&apos;s Scipts\TextureChanger.cs" />
      <Compile Include="Assets\Scripts\Rotator.cs" />
      <Compile Include="Assets\Scripts\flipTexture.cs" />

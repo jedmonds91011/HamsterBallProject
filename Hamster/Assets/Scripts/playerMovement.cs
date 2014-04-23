@@ -5,6 +5,7 @@ public class playerMovement : MonoBehaviour {
 
 	public float moveSpeed;
 	public float maxSpeed; 
+	private int collected = 0;
 
 	private Vector3 input;
 	
@@ -31,6 +32,7 @@ public class playerMovement : MonoBehaviour {
 		if(other.gameObject.tag == "Collectible")
 		{
 			Destroy(other.gameObject);
+			collected += 1;
 		}
 	}
 }
