@@ -28,11 +28,12 @@ public class LaserWall : MonoBehaviour {
 			character.SetActive(false);
 			}
 	}
-
+	/*
 	void OnTriggerExit(Collider collider)
 	{
 		character.renderer.material.mainTexture = nonArmorTex;
 		character.renderer.material.shader = nonArmorShade;
 	}
+	*/
 
 }
