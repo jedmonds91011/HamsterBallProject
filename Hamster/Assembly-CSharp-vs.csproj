@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\GUIHandler.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Kill.cs" />
+     <Compile Include="Assets\Scripts\Magnetism.cs" />
      <Compile Include="Assets\Scripts\Patrol.cs" />
      <Compile Include="Assets\Scripts\Reza&apos;s Scipts\BallMovement.cs" />
      <Compile Include="Assets\Scripts\Reza&apos;s Scipts\CameraFollow.cs" />
@@ -61,6 +62,7 @@
      <Compile Include="Assets\Scripts\Reza&apos;s Scipts\LaserWall.cs" />
      <Compile Include="Assets\Scripts\Reza&apos;s Scipts\LightControl.cs" />
      <Compile Include="Assets\Scripts\Reza&apos;s Scipts\MagnetWall.cs" />
+     <Compile Include="Assets\Scripts\Reza&apos;s Scipts\MagneticWall.cs" />
      <Compile Include="Assets\Scripts\Reza&apos;s Scipts\TextureChanger.cs" />
      <Compile Include="Assets\Scripts\Rotator.cs" />
      <Compile Include="Assets\Scripts\flipTexture.cs" />
