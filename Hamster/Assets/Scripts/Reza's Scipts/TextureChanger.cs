@@ -33,7 +33,7 @@ public class TextureChanger : MonoBehaviour {
 	//This allows the object to switch materials multiple times. 
 	void OnTriggerEnter (Collider collider) 
 	{
-		if (timer >= 0.5)
+		if (timer >= 2)
 			{
 			oldTexture = character.renderer.material.mainTexture;
 			oldShader = character.renderer.material.shader;

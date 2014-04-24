@@ -5,7 +5,6 @@ public class playerMovement : MonoBehaviour {
 
 	public float moveSpeed;
 	public float maxSpeed; 
-	private int collected = 0;
 
 	private Vector3 input;
 	
@@ -24,15 +23,14 @@ public class playerMovement : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		if(other.transform.tag == "Goal")
+		if(other.gameObject.tag == "Goal" && GameManager.GetPower() == 3)
 		{
 			GameManager.CompleteLevel();
 		}
-
 		if(other.gameObject.tag == "Collectible")
 		{
 			Destroy(other.gameObject);
-			collected += 1;
+			GameManager.IncrementPower();
 		}
 	}
 }

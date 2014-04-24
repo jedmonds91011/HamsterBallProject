@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\ActivatePortal.cs" />
      <Compile Include="Assets\Scripts\ButtonSwitch.cs" />
      <Compile Include="Assets\Scripts\ChangeMesh.cs" />
      <Compile Include="Assets\Scripts\Collectible.cs" />
@@ -53,6 +54,7 @@
      <Compile Include="Assets\Scripts\GUIHandler.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\HelpGUI.cs" />
+     <Compile Include="Assets\Scripts\JoshTitleGUI.cs" />
      <Compile Include="Assets\Scripts\Kill.cs" />
      <Compile Include="Assets\Scripts\Magnetism.cs" />
      <Compile Include="Assets\Scripts\Patrol.cs" />
