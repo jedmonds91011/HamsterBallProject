@@ -9,15 +9,14 @@ public class playerMovement : MonoBehaviour {
 	private Vector3 input;
 	
 	// Update is called once per frame
-	void Update () 
+	void FixedUpdate () 
 	{
+		Debug.Log (GameManager.GetPower ());
 		input = new Vector3 (Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
 		if (rigidbody.velocity.magnitude < maxSpeed) 
 		{
-			rigidbody.AddForce (input * moveSpeed);
+			rigidbody.AddForce (input * moveSpeed * Time.deltaTime);
 		}
-
-		//Debug.Log(rigidbody.velocity);
 		
 	}
 
