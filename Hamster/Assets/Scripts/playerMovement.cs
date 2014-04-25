@@ -13,10 +13,12 @@ public class playerMovement : MonoBehaviour {
 	{
 		Debug.Log (GameManager.GetPower ());
 		input = new Vector3 (Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+
 		if (rigidbody.velocity.magnitude < maxSpeed) 
 		{
-			rigidbody.AddForce (input * moveSpeed * Time.deltaTime);
+			rigidbody.AddForce (input * moveSpeed);
 		}
+		Debug.Log (rigidbody.velocity.magnitude);
 		
 	}
 
