@@ -42,7 +42,7 @@ public class LaserWall : MonoBehaviour {
 		{
 			counter += Time.fixedDeltaTime;
 			
-			if(counter > 1)
+			if(counter > 2)
 			{
 				parentCollider.SetActive (false);
 				counter = 0;
