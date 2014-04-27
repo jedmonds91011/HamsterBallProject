@@ -10,6 +10,11 @@ public class playerMovement : MonoBehaviour {
 
 	private Vector3 input;
 	private float inputMagnitude;
+
+	void Start()
+	{
+		GameManager.setSpawn (transform.position);
+	}
 	
 	// Update is called once per frame
 	void FixedUpdate () 
@@ -17,16 +22,6 @@ public class playerMovement : MonoBehaviour {
 		input = new Vector3 (Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
 		inputMagnitude = rigidbody.velocity.magnitude;
 
-		/*
-		if (inputMagnitude > 2.0f)
-		{
-			audio.Play();
-		}
-		else
-		{
-			audio.Stop();
-		}
-		*/
 		if (inputMagnitude < maxSpeed) 
 		{
 			rigidbody.AddForce (input * moveSpeed);
@@ -47,8 +42,10 @@ public class playerMovement : MonoBehaviour {
 			audio.clip = soundClips[0];
 			audio.PlayOneShot(audio.clip);
 
-			Destroy(other.gameObject);
+			GameManager.setSpawn(transform.position);
 			GameManager.IncrementPower();
+
+			Destroy(other.gameObject);
 		}
 		else if(itemTag == "Switch")
 		{
@@ -58,6 +55,11 @@ public class playerMovement : MonoBehaviour {
 		else if(itemTag == "Change Ball")
 		{
 			audio.clip = soundClips[1];
+			audio.PlayOneShot(audio.clip);
+		}
+		else if (itemTag == "Electric")
+		{
+			audio.clip = soundClips[3];
 			audio.PlayOneShot(audio.clip);
 		}
 	}

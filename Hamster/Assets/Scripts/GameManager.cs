@@ -8,16 +8,21 @@ public class GameManager : MonoBehaviour {
 
 	public static int currentLevel = 0;
 	public static int collectedPower = 0;
-	public static int unlockedLevel;
 
-	void Update()
+	public static int counter = 0;
+
+	public static Vector3 spawn;
+
+	void FixedUpdate()
 	{
-		Debug.Log (collectedPower);
+
+		counter += 1;
 		if(Input.GetKey(KeyCode.Escape))
 		{
 			Application.Quit();
 
 		}
+
 	}
 	public static void CompleteLevel()
 	{
@@ -33,5 +38,18 @@ public class GameManager : MonoBehaviour {
 	public static int GetPower()
 	{
 		return collectedPower;
+	}
+
+	public static int getCounter()
+	{
+		return counter;
+	}
+	public static Vector3 getSpawn()
+	{
+		return spawn;
+	}
+	public static void setSpawn( Vector3 currentLocation)
+	{
+		spawn = currentLocation;
 	}
 }

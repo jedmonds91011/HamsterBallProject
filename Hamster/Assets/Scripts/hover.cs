@@ -9,12 +9,9 @@ public class hover : MonoBehaviour {
 	private float counter;
 
 
-	private Vector3 initialPosition;
-
 	void Start()
 	{
 		direction = 1;
-		initialPosition = transform.position;
 	}
 
 	// Update is called once per frame

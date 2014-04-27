@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LightControl : MonoBehaviour {
 
-	public GameObject light;
+	public GameObject objLight;
 	public GameObject character;
 
 	// Use this for initialization
@@ -20,7 +20,7 @@ public class LightControl : MonoBehaviour {
 	{
 		if (collider.gameObject.name == character.name)
 			{
-			light.SetActive(true);
+			objLight.SetActive(true);
 			}
 	}
 
@@ -28,7 +28,7 @@ public class LightControl : MonoBehaviour {
 	{
 		if (collider.gameObject.name == character.name)
 			{
-			light.SetActive(false);
+			objLight.SetActive(false);
 			}
 	}
 }

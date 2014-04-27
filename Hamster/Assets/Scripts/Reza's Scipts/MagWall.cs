@@ -5,16 +5,13 @@ public class MagWall : MonoBehaviour {
 	public GameObject character;
 	public Texture armorTex;
 	public GameObject parentCollider;
-	private Texture nonArmorTex;
-	private Shader nonArmorShade;
+
 	private Vector3 forceVector;
 	private float counter;
 	
 	// Use this for initialization
 	void Start () 
 	{
-		nonArmorTex = character.renderer.material.mainTexture;
-		nonArmorShade = character.renderer.material.shader;
 		counter = 0;
 		parentCollider.SetActive (false);
 	}
@@ -39,14 +36,17 @@ public class MagWall : MonoBehaviour {
 	void OnTriggerEnter(Collider collider)
 	{
 		
-		if(character.renderer.material.mainTexture == armorTex && collider.tag == "Player")
+		if(collider.renderer.material.mainTexture == armorTex && collider.tag == "Player")
 		{
-			
-			forceVector = -character.rigidbody.velocity.normalized * 3000;
+
+			forceVector = -character.rigidbody.velocity.normalized;
+			Debug.Log (forceVector);
 			
 			Rigidbody Hamster = character.GetComponentInChildren<Rigidbody>();
+			//Hamster.rigidbody.velocity = Vector3.Reflect(forceVector, forceVector);
+			character.rigidbody.velocity = Vector3.Reflect(transform.position, forceVector);
 			
-			Hamster.rigidbody.AddForce(forceVector);
+			//Hamster.rigidbody.AddForce(forceVector);
 			
 			parentCollider.SetActive(true);
 			

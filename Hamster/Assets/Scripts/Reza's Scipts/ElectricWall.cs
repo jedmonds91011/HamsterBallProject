@@ -6,8 +6,8 @@ public class ElectricWall : MonoBehaviour {
 	public GameObject character;
 	public Texture armorTex;
 	public GameObject parentCollider;
+
 	private Texture nonArmorTex;
-	private Shader nonArmorShade;
 	private Vector3 forceVector;
 	private float counter;
 	
@@ -15,7 +15,6 @@ public class ElectricWall : MonoBehaviour {
 	void Start () 
 	{
 		nonArmorTex = character.renderer.material.mainTexture;
-		nonArmorShade = character.renderer.material.shader;
 		counter = 0;
 		parentCollider.SetActive (false);
 	}
