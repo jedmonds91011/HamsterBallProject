@@ -24,7 +24,6 @@ public class ButtonSwitch : MonoBehaviour
 			spot.color = lightColor;
 			transform.Translate(0.0f, -0.2f, 0.0f);
 
-
 			foreach (GameObject item in triggers)
 			{
 				if(activateObject == false)
@@ -32,7 +31,14 @@ public class ButtonSwitch : MonoBehaviour
 				else
 					item.SetActive(true);
 			}
+			gameObject.tag = "Untagged";
+
 		}
+	}
+
+	bool isSwitched()
+	{
+		return hasSwitched;
 	}
 
 	

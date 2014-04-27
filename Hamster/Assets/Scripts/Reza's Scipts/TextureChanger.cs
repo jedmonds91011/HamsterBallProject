@@ -19,6 +19,7 @@ public class TextureChanger : MonoBehaviour {
 		gameObject.renderer.material.mainTexture = newTexture;
 		gameObject.renderer.material.shader = newShader;
 		oldShader = Shader.Find ("Transparent/Diffuse");
+		timer = 2f;
 	}
 
 	void Update()

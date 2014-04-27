@@ -5,29 +5,53 @@ public class ElectricWall : MonoBehaviour {
 
 	public GameObject character;
 	public Texture armorTex;
-	public Texture nonArmor;
+	public GameObject parentCollider;
+	private Texture nonArmorTex;
+	private Shader nonArmorShade;
+	private Vector3 forceVector;
+	private float counter;
 	
 	// Use this for initialization
 	void Start () 
 	{
-		nonArmor = character.renderer.material.mainTexture;
+		nonArmorTex = character.renderer.material.mainTexture;
+		nonArmorShade = character.renderer.material.shader;
+		counter = 0;
+		parentCollider.SetActive (false);
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		
+		if (parentCollider.activeSelf)
+		{
+			counter += Time.fixedDeltaTime;
+			
+			if(counter > 2)
+			{
+				parentCollider.SetActive (false);
+				counter = 0;
+			}
+		}
 	}
 	
 	void OnTriggerEnter(Collider collider)
 	{
-		if( character.renderer.material.mainTexture != armorTex )
+		
+		if(character.renderer.material.mainTexture != armorTex && collider.tag == "Player")
 		{
-			character.rigidbody.AddForce(Vector3.forward * -100f * Time.deltaTime);
+
+			parentCollider.SetActive(true);
+			forceVector = -character.rigidbody.velocity.normalized * 3000;
+			
+			Rigidbody Hamster = character.GetComponentInChildren<Rigidbody>();
+			
+			Hamster.rigidbody.AddForce(forceVector);
+
+			
 		}
+		
 	}
-	
-	void OnTriggerExit(Collider collider)
-	{
-		character.renderer.material.mainTexture = nonArmor;
-	}
+
 }
