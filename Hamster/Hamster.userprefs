@@ -1,14 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\JoshTitleGUI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Reza's Scipts\MagWall.cs">
     <Files>
-      <File FileName="Assets\Scripts\JoshTitleGUI.cs" Line="75" Column="16" />
-      <File FileName="Assets\Scripts\Reza's Scipts\MagWall.cs" Line="21" Column="3" />
+      <File FileName="Assets\Scripts\Reza's Scipts\MagWall.cs" Line="52" Column="4" />
       <File FileName="Assets\Scripts\playerMovement.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Patrol.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\GameManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Kill.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Reza's Scipts\LaserWall.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Reza's Scipts\MagWall.cs" Line="45" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
