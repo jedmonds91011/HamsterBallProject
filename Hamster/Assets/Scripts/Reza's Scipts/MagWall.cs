@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using UnityEngine;
+using System.Collections;
+
 public class MagWall : MonoBehaviour {
 	public GameObject character;
 	public Texture armorTex;
 	public GameObject parentCollider;
-
+	
 	private Vector3 forceVector;
 	private float counter;
 	
@@ -38,15 +41,18 @@ public class MagWall : MonoBehaviour {
 		
 		if(collider.renderer.material.mainTexture == armorTex && collider.tag == "Player")
 		{
-
+			
 			forceVector = -character.rigidbody.velocity.normalized;
 			Debug.Log (forceVector);
 			
-			Rigidbody Hamster = character.GetComponentInChildren<Rigidbody>();
-			//Hamster.rigidbody.velocity = Vector3.Reflect(forceVector, forceVector);
-			character.rigidbody.velocity = Vector3.Reflect(transform.position, forceVector);
+			//Rigidbody Hamster = character.GetComponentInChildren<Rigidbody>();
+			//Vector3 HamsterForce = -Hamster.rigidbody.velocity.normalized;
+			//Hamster.rigidbody.velocity = Vector3.Reflect(HamsterForce, HamsterForce);
 			
-			//Hamster.rigidbody.AddForce(forceVector);
+			character.rigidbody.velocity = Vector3.Reflect(forceVector, forceVector*3);
+			//character.rigidbody.AddForce(forceVector);
+			
+			//Hamster.rigidbody.AddRelativeForce(HamsterForce);
 			
 			parentCollider.SetActive(true);
 			
@@ -54,3 +60,4 @@ public class MagWall : MonoBehaviour {
 		
 	}
 }
+

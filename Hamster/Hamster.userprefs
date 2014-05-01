@@ -1,4 +1,5 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Reza's Scipts\MagWall.cs">
     <Files>
@@ -9,6 +10,15 @@
       <File FileName="Assets\Scripts\Kill.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Reza's Scipts\LaserWall.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Reza's Scipts\MagWall.cs" Line="45" Column="1" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Reza's Scipts\LaserWall.cs">
+    <Files>
+      <File FileName="Assets\Scripts\GameManager.cs" Line="16" Column="20" />
+      <File FileName="Assets\Scripts\Kill.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Reza's Scipts\LaserWall.cs" Line="65" Column="75" />
+      <File FileName="Assets\Scripts\Reza's Scipts\MagWall.cs" Line="26" Column="33" />
+>>>>>>> origin/Josh
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
