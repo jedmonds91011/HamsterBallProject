@@ -1,16 +1,15 @@
 using UnityEngine;
-using System.Collections;
 
 public class LaserWall : MonoBehaviour {
-
+	
 	public GameObject character;
 	public Texture armorTex;
 	public GameObject parentCollider;
-
+	
 	private Texture nonArmorTex;
 	private Vector3 forceVector;
 	private float counter;
-
+	
 	// Use this for initialization
 	void Start () 
 	{
@@ -22,7 +21,7 @@ public class LaserWall : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-
+		
 		/*
 		if (transform.collider.isTrigger == false) 
 		{
@@ -36,7 +35,7 @@ public class LaserWall : MonoBehaviour {
 		}
 		Debug.Log (transform.collider.isTrigger);
 		*/
-
+		
 		if (parentCollider.activeSelf)
 		{
 			counter += Time.fixedDeltaTime;
@@ -47,29 +46,30 @@ public class LaserWall : MonoBehaviour {
 				counter = 0;
 			}
 		}
-
-
+		
+		
 	}
-
+	
 	void OnTriggerEnter(Collider collider)
 	{
-
+		
 		if(character.renderer.material.mainTexture != armorTex && collider.tag == "Player")
 		{
-
+			
 			forceVector = -character.rigidbody.velocity.normalized;
-			Debug.Log (forceVector);
-
-			Rigidbody Hamster = character.GetComponentInChildren<Rigidbody>();
+			//Debug.Log (forceVector);
+			
+			//Rigidbody Hamster = character.GetComponentInChildren<Rigidbody>();
 			//Hamster.rigidbody.velocity = Vector3.Reflect(forceVector, forceVector);
-			character.rigidbody.velocity = Vector3.Reflect(transform.position, forceVector);
-
+			
+			character.rigidbody.velocity = Vector3.Reflect(forceVector, forceVector);
+			
 			//Hamster.rigidbody.AddForce(forceVector);
-
+			
 			parentCollider.SetActive(true);
-
+			
 		}
-
+		
 	}
 	/*
 	void OnTriggerExit(Collider collider)
@@ -78,5 +78,5 @@ public class LaserWall : MonoBehaviour {
 		character.renderer.material.shader = nonArmorShade;
 	}
 	*/
-
+	
 }
