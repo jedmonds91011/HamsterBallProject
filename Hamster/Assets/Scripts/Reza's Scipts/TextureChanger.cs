@@ -15,16 +15,16 @@ public class TextureChanger : MonoBehaviour {
 	//is stored as the material/shader of the item this script is attached to
 	void Start () 
 	{
-		newShader = Shader.Find ("Diffuse");
+		newShader = Shader.Find ("Parallax Specular");
 		gameObject.renderer.material.mainTexture = newTexture;
 		gameObject.renderer.material.shader = newShader;
 		oldShader = Shader.Find ("Transparent/Diffuse");
-		timer = 2f;
+		timer = 3f;
 	}
 
 	void Update()
 	{
-		timer += Time.deltaTime;
+		timer += Time.fixedDeltaTime;
 	}
 
 	// When the target (assigned in editor) object enters the trigger
