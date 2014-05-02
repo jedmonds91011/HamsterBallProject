@@ -8,12 +8,17 @@ public class playerMovement : MonoBehaviour {
 	public AudioClip[] soundClips;
 
 
+	private GameObject Ball;
 	private Vector3 input;
 	private float inputMagnitude;
+	private GameObject parentBall;
+
 
 	void Start()
 	{
 		GameManager.setSpawn (transform.position);
+		parentBall = GameObject.Find ("Ball");
+
 	}
 	
 	// Update is called once per frame
@@ -26,6 +31,7 @@ public class playerMovement : MonoBehaviour {
 		{
 			rigidbody.AddForce (input * moveSpeed);
 		}
+
 	}
 
 	void OnTriggerEnter(Collider other)
@@ -61,6 +67,13 @@ public class playerMovement : MonoBehaviour {
 		{
 			audio.clip = soundClips[3];
 			audio.PlayOneShot(audio.clip);
+		}
+	}
+	void OnTriggerExit(Collider other)
+	{
+		if(other.tag == "Player")
+		{
+			gameObject.transform.position = parentBall.transform.position;
 		}
 	}
 }

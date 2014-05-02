@@ -23,8 +23,9 @@ public class Kill : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Enemy") 
 		{
-			Die ();
 			rigidbody.velocity = Vector3.zero;
+			Die ();
+
 		}
 	}
 
@@ -32,5 +33,7 @@ public class Kill : MonoBehaviour {
 	{
 		Instantiate(killAnimation, transform.position, Quaternion.identity);
 		transform.position = GameManager.getSpawn();
+		gameObject.GetComponentInChildren<Rigidbody> ().transform.position = GameManager.getSpawn ();
+
 	}
 }

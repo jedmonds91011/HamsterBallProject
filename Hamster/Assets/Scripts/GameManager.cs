@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour {
 	public static Vector3 spawn;
 
 	private Rect pauseRect = new Rect(Screen.width/2, Screen.height/2, Screen.width/4, Screen.height/4);
+	private Rect stop = new Rect(Screen.width/4, Screen.height/4, Screen.width/18, Screen.height/18);
+	private Rect go = new Rect(Screen.width/2, Screen.height/2, Screen.width/18, Screen.height/18);
 	public Texture pauseScreen;
 
 	private bool isPaused = false;
@@ -42,22 +44,22 @@ public class GameManager : MonoBehaviour {
 		}
 
 	}
-	/*
+
 	void OnGUI()
 	{		// Set our coordinate group
-		GUI.BeginGroup (pauseRect);
+		//GUI.BeginGroup (pauseRect);
 		
 		// draw stuff!
-		GUI.Box (pauseRect, GUIContent.none);
-		//GUI.Label (guiGenre, "Genre: Puzzle Platformer");
-		//GUI.Label (guiMechanics, "Mechanics: \n\tSlidy Movement \n\tCollectibles (Stars) \n\tDon't die!");
+		//GUI.Box (pauseRect, GUIContent.none);
+		//GUI.Label (stop, "Genre: Puzzle Platformer");
+		//GUI.Label (go, "Mechanics: \n\tSlidy Movement \n\tCollectibles (Stars) \n\tDon't die!");
 		
 		
 		// MUST NOT FORGET
-		GUI.EndGroup ();
+		//GUI.EndGroup ();
 		//GUI.DrawTexture (pauseRect, pauseScreen);
 	}
-	*/
+
 
 	public static void CompleteLevel()
 	{

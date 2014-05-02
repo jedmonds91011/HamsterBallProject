@@ -42,14 +42,14 @@ public class MagWall : MonoBehaviour {
 		if(collider.renderer.material.mainTexture == armorTex && collider.tag == "Player")
 		{
 			
-			forceVector = -character.rigidbody.velocity.normalized;
-			Debug.Log (forceVector);
+			//forceVector = -character.rigidbody.velocity.normalized;
+			//Debug.Log (forceVector);
 			
 			//Rigidbody Hamster = character.GetComponentInChildren<Rigidbody>();
 			//Vector3 HamsterForce = -Hamster.rigidbody.velocity.normalized;
 			//Hamster.rigidbody.velocity = Vector3.Reflect(HamsterForce, HamsterForce);
 			
-			character.rigidbody.velocity = Vector3.Reflect(forceVector, forceVector*3);
+			//character.rigidbody.velocity = Vector3.Reflect(forceVector, forceVector*3);
 			//character.rigidbody.AddForce(forceVector);
 			
 			//Hamster.rigidbody.AddRelativeForce(HamsterForce);

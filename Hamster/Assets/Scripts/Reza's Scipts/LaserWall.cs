@@ -62,7 +62,7 @@ public class LaserWall : MonoBehaviour {
 			//Rigidbody Hamster = character.GetComponentInChildren<Rigidbody>();
 			//Hamster.rigidbody.velocity = Vector3.Reflect(forceVector, forceVector);
 			
-			character.rigidbody.velocity = Vector3.Reflect(forceVector, forceVector);
+			character.rigidbody.velocity = Vector3.Reflect(gameObject.transform.position, forceVector);
 			
 			//Hamster.rigidbody.AddForce(forceVector);
 			
