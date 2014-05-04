@@ -13,9 +13,8 @@ public class GameManager : MonoBehaviour {
 
 	public static Vector3 spawn;
 
-	private Rect pauseRect = new Rect(Screen.width/2, Screen.height/2, Screen.width/4, Screen.height/4);
-	private Rect stop = new Rect(Screen.width/4, Screen.height/4, Screen.width/18, Screen.height/18);
-	private Rect go = new Rect(Screen.width/2, Screen.height/2, Screen.width/18, Screen.height/18);
+	private Rect pauseRect = new Rect(Screen.width/4, Screen.height/4, Screen.width/4, Screen.height/4);
+
 	public Texture pauseScreen;
 
 	private bool isPaused = false;
@@ -26,16 +25,16 @@ public class GameManager : MonoBehaviour {
 		counter += 1;
 		if(Input.GetKeyUp(KeyCode.Escape))
 		{
-			if(!isPaused)
+			isPaused = !isPaused;
+
+			if(isPaused)
 			{
 				Time.timeScale = 0;
-				isPaused = true;
 				Screen.showCursor = true;
 			}
 			else
 			{
 				Time.timeScale = 1;
-				isPaused = false;
 				Screen.showCursor = false;
 			}
 			//GUIHandler.OnGUI();
@@ -46,7 +45,11 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void OnGUI()
-	{		// Set our coordinate group
+	{		
+		if (isPaused)
+			pauseRect = GUI.Window (0, pauseRect, PauseMenu, "Pause Menu");
+
+		// Set our coordinate group
 		//GUI.BeginGroup (pauseRect);
 		
 		// draw stuff!
@@ -60,18 +63,40 @@ public class GameManager : MonoBehaviour {
 		//GUI.DrawTexture (pauseRect, pauseScreen);
 	}
 
+	void PauseMenu(int windowId)
+	{
+		if(GUILayout.Button("Main Menu"))
+		{
+			isPaused = false;
+			currentLevel = 0;
+			Application.LoadLevel(0);
+		}
+		if(GUILayout.Button ("Restart"))
+		{
+			isPaused = false;
+			Application.LoadLevel(currentLevel);
+
+
+		}
+		if(GUILayout.Button ("Quit"))
+		{
+			Application.Quit ();
+		}
+	}
 
 	public static void CompleteLevel()
 	{
 		currentLevel += 1;
 		collectedPower = 0;
 		Application.LoadLevel (currentLevel);
+
 	}
 
 	public static void IncrementPower()
 	{
 		collectedPower += 1;
 	}
+
 	public static int GetPower()
 	{
 		return collectedPower;
@@ -81,12 +106,15 @@ public class GameManager : MonoBehaviour {
 	{
 		return counter;
 	}
+
 	public static Vector3 getSpawn()
 	{
 		return spawn;
 	}
+
 	public static void setSpawn( Vector3 currentLocation)
 	{
 		spawn = currentLocation;
 	}
+
 }
