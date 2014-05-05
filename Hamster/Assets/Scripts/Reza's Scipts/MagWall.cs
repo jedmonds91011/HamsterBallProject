@@ -1,9 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-using UnityEngine;
-using System.Collections;
-
 public class MagWall : MonoBehaviour {
 	public GameObject character;
 	public Texture armorTex;

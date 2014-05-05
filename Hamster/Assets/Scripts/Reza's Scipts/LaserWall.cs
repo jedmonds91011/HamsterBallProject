@@ -9,6 +9,7 @@ public class LaserWall : MonoBehaviour {
 	private Texture nonArmorTex;
 	private Vector3 forceVector;
 	private float counter;
+	private bool canDamage;
 	
 	// Use this for initialization
 	void Start () 
@@ -16,26 +17,12 @@ public class LaserWall : MonoBehaviour {
 		nonArmorTex = character.renderer.material.mainTexture;
 		counter = 0;
 		parentCollider.SetActive (false);
+		canDamage = true;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		
-		/*
-		if (transform.collider.isTrigger == false) 
-		{
-			counter += Time.fixedDeltaTime;
-
-			if(counter > 5)
-			{
-				transform.collider.isTrigger = true;
-				counter = 0;
-			}
-		}
-		Debug.Log (transform.collider.isTrigger);
-		*/
-		
 		if (parentCollider.activeSelf)
 		{
 			counter += Time.fixedDeltaTime;
@@ -43,11 +30,10 @@ public class LaserWall : MonoBehaviour {
 			if(counter > 2)
 			{
 				parentCollider.SetActive (false);
+				canDamage = true;
 				counter = 0;
 			}
 		}
-		
-		
 	}
 	
 	void OnTriggerEnter(Collider collider)
@@ -67,6 +53,11 @@ public class LaserWall : MonoBehaviour {
 			//Hamster.rigidbody.AddForce(forceVector);
 			
 			parentCollider.SetActive(true);
+			if(canDamage)
+			{
+				GameManager.takeDamage();
+				canDamage = false;
+			}
 			
 		}
 		
