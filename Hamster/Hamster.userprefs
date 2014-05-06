@@ -1,16 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\playerMovement.cs">
     <Files>
+      <File FileName="Assets\Scripts\playerMovement.cs" Line="72" Column="15" />
       <File FileName="Assets\Scripts\GameManager.cs" Line="70" Column="67" />
       <File FileName="Assets\Scripts\ActivatePortal.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\JoshTitleGUI.cs" Line="1" Column="1" />
       <File FileName="c:\Users\Josh\Documents\GitHub\HamsterBall Repository\HamsterBallProject\Hamster\Assets\Scripts\Reza's Scipts\MagWall.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\portalTrigger.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Reza's Scipts\LaserWall.cs" Line="51" Column="95" />
-      <File FileName="Assets\Scripts\playerMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Reza's Scipts\LaserWall.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\playerMovement.cs" Line="88" Column="1" />
       <File FileName="Assets\Scripts\Patrol.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Kill.cs" Line="30" Column="2" />
+      <File FileName="Assets\Scripts\Kill.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

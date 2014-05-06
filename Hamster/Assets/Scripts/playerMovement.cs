@@ -33,6 +33,11 @@ public class playerMovement : MonoBehaviour {
 		}
 
 	}
+	void OnCollideEnter()
+	{
+		audio.clip = soundClips [5];
+		audio.PlayOneShot (audio.clip);
+	}
 
 	void OnTriggerEnter(Collider other)
 	{
@@ -40,6 +45,9 @@ public class playerMovement : MonoBehaviour {
 
 		if(itemTag == "Goal" && GameManager.GetPower() == 3)
 		{
+			audio.clip = soundClips[4];
+			audio.PlayOneShot(audio.clip);
+
 			GameManager.CompleteLevel();
 		}
 
