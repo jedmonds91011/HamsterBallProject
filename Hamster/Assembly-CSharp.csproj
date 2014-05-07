@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts\Reza&apos;s Scipts\MagneticWallFUCKINGSUCKS.cs" />
      <Compile Include="Assets\Scripts\Reza&apos;s Scipts\TextureChanger.cs" />
      <Compile Include="Assets\Scripts\Rotator.cs" />
+     <Compile Include="Assets\Scripts\SoundManager.cs" />
      <Compile Include="Assets\Scripts\TitleGUI.cs" />
      <Compile Include="Assets\Scripts\flipTexture.cs" />
      <Compile Include="Assets\Scripts\followCam.cs" />

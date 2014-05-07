@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour {
 	void Update()
 	{
 
-		counter += 1;
+		//counter += Time.fixedDeltaTime;
 		if(Input.GetKeyUp(KeyCode.Escape))
 		{
 			isPaused = !isPaused;

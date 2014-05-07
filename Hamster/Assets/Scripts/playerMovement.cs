@@ -5,7 +5,6 @@ public class playerMovement : MonoBehaviour {
 
 	public float moveSpeed;
 	public float maxSpeed; 
-	public AudioClip[] soundClips;
 
 
 	private GameObject Ball;
@@ -26,6 +25,7 @@ public class playerMovement : MonoBehaviour {
 	{
 		input = new Vector3 (Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
 		inputMagnitude = rigidbody.velocity.magnitude;
+		
 
 		if (inputMagnitude < maxSpeed) 
 		{
@@ -33,50 +33,18 @@ public class playerMovement : MonoBehaviour {
 		}
 
 	}
-	void OnCollideEnter()
-	{
-		audio.clip = soundClips [5];
-		audio.PlayOneShot (audio.clip);
-	}
-
 	void OnTriggerEnter(Collider other)
 	{
-		string itemTag = other.gameObject.tag;
-
-		if(itemTag == "Goal" && GameManager.GetPower() == 3)
+		if(other.tag == "Collectible")
 		{
-			audio.clip = soundClips[4];
-			audio.PlayOneShot(audio.clip);
-
-			GameManager.CompleteLevel();
-		}
-
-		else if(itemTag == "Collectible")
-		{
-			audio.clip = soundClips[0];
-			audio.PlayOneShot(audio.clip);
-
-			GameManager.setSpawn(transform.position);
+			
 			GameManager.IncrementPower();
-
+			
 			Destroy(other.gameObject);
 		}
-		else if(itemTag == "Switch")
-		{
-			audio.clip = soundClips[2];
-			audio.PlayOneShot(audio.clip);
-		}
-		else if(itemTag == "Change Ball")
-		{
-			audio.clip = soundClips[1];
-			audio.PlayOneShot(audio.clip);
-		}
-		else if (itemTag == "Electric")
-		{
-			audio.clip = soundClips[3];
-			audio.PlayOneShot(audio.clip);
-		}
+
 	}
+
 	void OnTriggerExit(Collider other)
 	{
 		if(other.tag == "Player")
