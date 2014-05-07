@@ -34,6 +34,7 @@ public class Kill : MonoBehaviour {
 		{
 			enemy = other.gameObject;
 			beenHit = true;
+			timer = 0.3f;
 
 			Vector3 forceVector = -gameObject.rigidbody.velocity.normalized;	
 			gameObject.rigidbody.velocity = Vector3.Reflect(enemy.transform.position, forceVector);
@@ -49,6 +50,7 @@ public class Kill : MonoBehaviour {
 		{
 			enemy = other.gameObject;
 			beenHit = true;
+			timer = 0.3f;
 			Vector3 forceVector = -gameObject.rigidbody.velocity.normalized;	
 			gameObject.rigidbody.velocity = Vector3.Reflect(enemy.transform.position, forceVector*3);
 			

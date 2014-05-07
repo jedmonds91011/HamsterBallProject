@@ -30,7 +30,7 @@ public class Boss : MonoBehaviour {
 			SetWeakPoint (weakSpots [currentStage]);
 		}
 
-		if (currentStage == 4)
+		if (currentStage > 3)
 		{
 			gameObject.GetComponent<Patrol>().enabled = false;
 		}
