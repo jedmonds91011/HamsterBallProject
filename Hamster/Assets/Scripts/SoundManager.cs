@@ -45,11 +45,14 @@ public class SoundManager : MonoBehaviour {
 			audio.clip = soundClips[3];
 			audio.PlayOneShot(audio.clip);
 		}
-		else if (itemTag == "Enemy")
+		else if (itemTag == "Enemy" || itemTag == "Hurts")
 		{
 			audio.clip = soundClips[5];
 			audio.PlayOneShot(audio.clip);
 		}
+
+
+
 		
 	}
 }

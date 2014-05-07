@@ -36,10 +36,30 @@ public class Kill : MonoBehaviour {
 			beenHit = true;
 
 			Vector3 forceVector = -gameObject.rigidbody.velocity.normalized;	
-			gameObject.rigidbody.velocity = Vector3.Reflect(gameObject.transform.position, forceVector);
+			gameObject.rigidbody.velocity = Vector3.Reflect(enemy.transform.position, forceVector);
 
 			damage ();
 		}
+
+	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		if(other.gameObject.tag == "Hurts" && !beenHit)
+		{
+			enemy = other.gameObject;
+			beenHit = true;
+			Vector3 forceVector = -gameObject.rigidbody.velocity.normalized;	
+			gameObject.rigidbody.velocity = Vector3.Reflect(enemy.transform.position, forceVector*3);
+			
+			damage ();
+		}
+		else if(other.gameObject.tag == "Sweet Spot")
+		{
+			other.gameObject.SetActive(false);
+		}
+
+
 	}
 
 	void damage()
