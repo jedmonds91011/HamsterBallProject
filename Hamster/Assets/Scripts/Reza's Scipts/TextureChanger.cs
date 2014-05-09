@@ -19,7 +19,7 @@ public class TextureChanger : MonoBehaviour {
 		gameObject.renderer.material.mainTexture = newTexture;
 		gameObject.renderer.material.shader = newShader;
 		oldShader = Shader.Find ("Transparent/Diffuse");
-		timer = 3f;
+		timer = 0f;
 	}
 
 	void Update()
@@ -34,7 +34,7 @@ public class TextureChanger : MonoBehaviour {
 	//This allows the object to switch materials multiple times. 
 	void OnTriggerEnter (Collider collider) 
 	{
-		if (timer >= 2)
+		if (timer >= 5)
 			{
 			oldTexture = character.renderer.material.mainTexture;
 			oldShader = character.renderer.material.shader;
@@ -48,7 +48,7 @@ public class TextureChanger : MonoBehaviour {
 			newTexture = oldTexture;
 			newShader = oldShader;
 			//recentlyChanged = true;
-			timer = 0;
+			timer = 0f;
 			} 
 	}
 

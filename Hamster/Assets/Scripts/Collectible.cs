@@ -7,4 +7,15 @@ public class Collectible : MonoBehaviour {
 	{
 		transform.Rotate (new Vector3(15 ,30, 45) * Time.deltaTime);
 	}
+
+	void OnTriggerExit(Collider other)
+	{
+		if(other.tag == "Player")
+		{
+			
+			GameManager.IncrementPower();
+			Destroy(gameObject);
+		}
+		
+	}
 }

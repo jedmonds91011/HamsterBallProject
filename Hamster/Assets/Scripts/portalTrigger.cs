@@ -12,7 +12,7 @@ public class portalTrigger : MonoBehaviour {
 
 	void Update()
 	{
-		if(GameManager.GetPower () == 3)
+		if(GameManager.GetPower () >= 3)
 		{
 			gameObject.GetComponent<Rotator>().enabled = true;
 		}

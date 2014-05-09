@@ -95,11 +95,13 @@ public class GameManager : MonoBehaviour {
 			currentLevel = 0;
 			Application.LoadLevel(0);
 			Time.timeScale = 1;
+			isDead = false;
 		}
 		if(GUILayout.Button (pauseScreen[2]))
 		{
 			Application.LoadLevel(currentLevel);
 			Time.timeScale = 1;
+			isDead = false;
 
 		}
 		if(GUILayout.Button (pauseScreen[3]))
@@ -114,6 +116,7 @@ public class GameManager : MonoBehaviour {
 	{
 		currentLevel += 1;
 		collectedPower = 0;
+		Time.timeScale = 1;
 		damage = 0;
 		Application.LoadLevel (currentLevel);
 
@@ -122,6 +125,8 @@ public class GameManager : MonoBehaviour {
 	public static void IncrementPower()
 	{
 		collectedPower += 1;
+		if(collectedPower > 3)
+			collectedPower = 3;
 	}
 
 	public static int GetPower()
