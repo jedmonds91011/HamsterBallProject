@@ -23,20 +23,22 @@ public class GameManager : MonoBehaviour {
 	private Rect gameGUI;
 	private Rect damageGUI;
 
-	private bool isPaused = false;
-	private bool isDead = false;
+	private bool isPaused;
+	private bool isDead;
 
 
 	void Start()
 	{
 		gameGUI = new Rect (0, Screen.height - guiText[0].height, guiText[0].width, guiText[0].height);
+		isPaused = false;
+		isDead = false;
 	}
 
 	void Update()
 	{
 
 		//counter += Time.fixedDeltaTime;
-		if(Input.GetKeyUp(KeyCode.Escape))
+		if(Input.GetKeyUp(KeyCode.Escape) && !isDead)
 		{
 			isPaused = !isPaused;
 
@@ -52,7 +54,7 @@ public class GameManager : MonoBehaviour {
 			}
 		}
 
-		if (damage > 3)
+		if (damage > 3 && !isDead)
 		{
 			Time.timeScale = 0;
 			Screen.showCursor = true;
@@ -62,22 +64,30 @@ public class GameManager : MonoBehaviour {
 
 	void OnGUI()
 	{	
-		if (isPaused)
-			pauseRect = GUI.Window (0, pauseRect, PauseMenu, pauseScreen[0]);
-
 		if (isDead)
 		{
 			loseRect = GUI.Window (1, loseRect, PauseMenu, pauseScreen[4]);
 		}
 
-		GUI.BeginGroup (gameGUI, guiText[collectedPower]);
-		GUI.DrawTexture (new Rect (96, 25, 128, 128), damageTextures [damage]);
-		GUI.EndGroup ();
+		else if (isPaused)
+		{
+			pauseRect = GUI.Window (0, pauseRect, PauseMenu, pauseScreen[0]);
+
+		}
+
+		else
+		{
+			GUI.BeginGroup (gameGUI, guiText[collectedPower]);
+			GUI.DrawTexture (new Rect (96, 25, 128, 128), damageTextures [damage]);
+			GUI.EndGroup ();
+		}
+
 
 	}
 
 	void PauseMenu(int windowId)
 	{
+		GUI.FocusWindow (windowId);
 		GUILayout.FlexibleSpace ();
 
 		if(GUILayout.Button(pauseScreen[1]))

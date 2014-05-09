@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using System.Collections;
 
 public class JoshTitleGUI : MonoBehaviour
@@ -8,7 +9,7 @@ public class JoshTitleGUI : MonoBehaviour
 	Rect helpButton =  new Rect(Screen.width/2 - 50, Screen.height/4 + 400, 100, 64);
 	Rect quitButton =  new Rect(Screen.width/2 + 150, Screen.height/4 + 400, 100, 64);
 	Rect backButton = new Rect(Screen.width/2, Screen.height - 100 , 100, 64);
-	Rect helpRect = new Rect (0, 25, Screen.width, Screen.height); 
+	Rect helpRect = new Rect (0, 25, Screen.width, Screen.height-45); 
 	Rect titleRect = new Rect (Screen.width/4, Screen.height/8, Screen.width/2, Screen.height/2);
 
 
@@ -77,7 +78,7 @@ public class JoshTitleGUI : MonoBehaviour
 				Debug.LogError("Please assign a texture on the inspector");
 			}
 
-			objects.transform.position = objectLoc;
+			//objects.transform.position = objectLoc;
 			GUI.DrawTexture(helpRect, helpImg, ScaleMode.ScaleToFit, true, 0.0f);
 			//GUI.DrawTexture (objectRect, objectImg, ScaleMode.ScaleToFit, true, 0.0f);
 
@@ -91,7 +92,7 @@ public class JoshTitleGUI : MonoBehaviour
 			{
 				Debug.Log ("Clicked the button!");
 				helpFlag = false;
-				objects.transform.Translate(beginLoc);
+				//objects.transform.Translate(beginLoc);
 			}
 
 		}
